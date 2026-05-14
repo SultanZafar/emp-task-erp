@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+.env
+odoo.conf
+*.log
+.idea/
+odoo-env/
+odoo-18/
+odoo-19.0/
