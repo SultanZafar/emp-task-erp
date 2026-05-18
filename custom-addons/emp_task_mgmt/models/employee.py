@@ -11,11 +11,15 @@ class EmployeeCustom(models.Model):
     email = fields.Char('Email', required=True)
     designation = fields.Char('Designation')
     joining_date = fields.Date('Joining Date')
-    location = fields.Char('Location')
+    location = fields.Selection([
+        ('lahore', 'Lahore'),
+        ('islamabad', 'Islamabad'),
+        ('karachi', 'Karachi'),
+    ], 'Location')
     employment_type = fields.Selection([
         ('permanent', 'Permanent'),
         ('contract', 'Contract'),
-        ('frelance', 'Frelance'),
+        ('freelance', 'Freelance'),
     ], 'Employee Type')
     work_mode = fields.Selection([
         ('onsite', 'On site'),

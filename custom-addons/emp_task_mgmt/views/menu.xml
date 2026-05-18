@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem
+        id="menu_emp_task_main"
+        name="Task Management"
+        sequence="10"/>
+
+    <!-- Employees Sub Menu -->
+    <menuitem
+        id="menu_employee_custom"
+        name="Employees"
+        parent="menu_emp_task_main"
+        action="action_employee_custom"
+        sequence="1"/>
+
+    <!-- Tasks Sub Menu -->
+    <menuitem
+        id="menu_emp_task"
+        name="Task"
+        parent="menu_emp_task_main"
+        action="action_emp_task"
+        sequence="2"/>
+
+</odoo>

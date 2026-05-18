@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="dashboard_template" name="ETM Dashboard">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="etm_dashboard">
+
+                    <div class="etm_stats">
+                        <div class="etm_stat_card">
+                            <div class="etm_stat_num" style="color:#38bdf8">
+                                <t t-esc="total_employees"/>
+                            </div>
+                            <div class="etm_stat_label">Total Employees</div>
+                        </div>
+                        <div class="etm_stat_card">
+                            <div class="etm_stat_num" style="color:#fb923c">
+                                <t t-esc="in_progress"/>
+                            </div>
+                            <div class="etm_stat_label">In Progress</div>
+                        </div>
+                        <div class="etm_stat_card">
+                            <div class="etm_stat_num" style="color:#4ade80">
+                                <t t-esc="done_tasks"/>
+                            </div>
+                            <div class="etm_stat_label">Completed</div>
+                        </div>
+                        <div class="etm_stat_card">
+                            <div class="etm_stat_num" style="color:#f87171">
+                                <t t-esc="new_tasks"/>
+                            </div>
+                            <div class="etm_stat_label">New Tasks</div>
+                        </div>
+                    </div>
+
+                    <div class="etm_grid">
+                        <div class="etm_card">
+                            <div class="etm_card_title">Recent Tasks</div>
+                            <t t-foreach="recent_tasks" t-as="task">
+                                <div class="etm_task_row">
+                                    <div style="flex:1;color:#e2e8f0">
+                                        <t t-esc="task.name"/>
+                                    </div>
+                                    <span t-attf-class="etm_badge etm_badge_#{task.status}">
+                                        <t t-esc="task.status"/>
+                                    </span>
+                                </div>
+                            </t>
+                        </div>
+                        <div class="etm_card">
+                            <div class="etm_card_title">Team</div>
+                            <t t-foreach="employees" t-as="emp">
+                                <div class="etm_task_row">
+                                    <div style="flex:1;color:#e2e8f0">
+                                        <t t-esc="emp.name"/>
+                                    </div>
+                                    <span class="etm_badge etm_badge_done">Active</span>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

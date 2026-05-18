@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_employee_custom_tree" model="ir.ui.view">
+        <field name="name">hr.employee.custom.tree</field>
+        <field name="model">hr.employee.custom</field>
+        <field name="arch" type="xml">
+            <list string="Employee">
+                <field name="employee_id"/>
+                <field name="name"/>
+                <field name="department"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="location"/>
+            </list>
+        </field>
+    </record>
+
+
+    <!-- Form View -->
+    <record id="view_employee_custom_form" model="ir.ui.view">
+        <field name="name">hr.employee.custom.form</field>
+        <field name="model">hr.employee.custom</field>
+        <field name="arch" type="xml">
+            <form string="Employee">
+                <sheet>
+                    <group string="Personal Info">
+                        <field name="employee_id"/>
+                        <field name="name"/>
+                        <field name="department"/>
+                    </group>
+                    <group string="Contact Info">
+                        <field name="email"/>
+                        <field name="phone"/>
+                        <field name="location"/>
+                    </group>
+                    <group string="Job Info">
+                        <field name="designation"/>
+                        <field name="employment_type"/>
+                        <field name="work_mode"/>
+                        <field name="joining_date"/>
+                        <field name="status"/>
+                        <field name="reporting_manager"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+<!-- Action -->
+    <record id="action_employee_custom" model="ir.actions.act_window">
+        <field name="name">Employees</field>
+        <field name="res_model">hr.employee.custom</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>
+
+
