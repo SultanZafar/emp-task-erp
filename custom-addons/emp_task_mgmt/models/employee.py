@@ -1,5 +1,6 @@
 from odoo import models, fields
 
+
 class EmployeeCustom(models.Model):
     _name = 'hr.employee.custom'
     _description = 'Employee'

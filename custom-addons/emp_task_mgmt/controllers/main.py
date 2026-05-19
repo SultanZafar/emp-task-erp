@@ -1,6 +1,7 @@
 from odoo import http
 from odoo.http import request
 
+
 class DashboardController(http.Controller):
 
     @http.route('/emp_task/dashboard', auth='user', website=False)

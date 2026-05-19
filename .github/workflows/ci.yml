@@ -12,22 +12,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1 — Code checkout karo
+      # Step 1 — Code checkout
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2 — Python setup karo
+      # Step 2 — Python setup
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
 
-      # Step 3 — Dependencies install karo
+      # Step 3 — Dependencies install
       - name: Install dependencies
         run: |
           pip install flake8
 
-      # Step 4 — Linting karo
+      # Step 4 — Linting
       - name: Run linting
         run: |
           flake8 custom-addons/ --max-line-length=120 --exclude=__pycache__
