@@ -1,0 +1,48 @@
+name: ERP CI Pipeline
+
+on:
+  push:
+    branches: [develop, main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Code Quality Check
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1 — Code checkout karo
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2 — Python setup karo
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      # Step 3 — Dependencies install karo
+      - name: Install dependencies
+        run: |
+          pip install flake8
+
+      # Step 4 — Linting karo
+      - name: Run linting
+        run: |
+          flake8 custom-addons/ --max-line-length=120 --exclude=__pycache__
+
+  docker:
+    name: Docker Build
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      # Step 1 — Code checkout
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2 — Docker image build karo
+      - name: Build Docker image
+        run: |
+          docker build -t odoo-erp:latest .
