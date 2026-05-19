@@ -12,7 +12,7 @@ class EmployeeTask(models.Model):
         ('new', 'New'),
         ('in_progress', 'In Progress'),
         ('done', 'Done'),
-    ],string='Status', default='new')
+    ], string='Status', default='new')
     assigned_to = fields.Many2one(
         'hr.employee.custom',
         string='Assigned To'

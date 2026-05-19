@@ -5,7 +5,7 @@
     'description': 'Employee Task Management System for managing employee records and tasks',
     'author': 'SultanZafar',
     'category': 'Human Resources',
-    'depends': ['base', 'mail','web'],
+    'depends': ['base', 'mail', 'web'],
     'controllers': ['controllers/main.py'],
     'data': [
         'security/ir.model.access.csv',

@@ -5,7 +5,7 @@ class EmployeeCustom(models.Model):
     _name = 'hr.employee.custom'
     _description = 'Employee'
 
-    employee_id = fields.Char ('Employee ID', required=True)
+    employee_id = fields.Char('Employee ID', required=True)
     name = fields.Char('Name', required=True)
     department = fields.Char('Department', required=True)
     phone = fields.Char('Phone')
