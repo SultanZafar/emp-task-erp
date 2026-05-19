@@ -4,8 +4,8 @@ libpq-dev \
 build-essential \
 libldap2-dev \
 libsasl2-dev \
-libsasl2-dev \
-libsasl2-dev \
+&& rm -rf /var/lib/apt/lists/*
+RUN pip install odoo
 WORKDIR /odoo
 COPY custom-addons/ ./custom-addons/
 EXPOSE 8069
