@@ -14,3 +14,5 @@
 
     - name: Build Odoo Docker image
       command: docker build -t odoo-erp:latest .
+      args:
+        chdir: "{{ playbook_dir }}/.."
