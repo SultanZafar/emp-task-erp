@@ -13,7 +13,6 @@ COPY odoo-18/ ./odoo-18/
 COPY custom-addons/ ./custom-addons/
 RUN pip install -r odoo-18/requirements.txt
 
-COPY odoo.conf ./odoo.conf
 
 EXPOSE 8069
 
