@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: odoo-erp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: odoo-erp
+  template:
+    metadata:
+      labels:
+        app: odoo-erp
+    spec:
+      containers:
+      - name: odoo-erp
+        image: odoo-erp:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8069
