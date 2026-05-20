@@ -8,3 +8,7 @@ odoo.conf
 odoo-env/
 odoo-18/
 odoo-19.0/
+.terraform/
+terraform/.terraform/
+*.tfstate
+*.tfstate.backup
