@@ -1,4 +1,5 @@
-from odoo import models, fields, api
+from odoo import models, fields
+
 
 class EmployeePayroll(models.Model):
     _name = 'emp.payroll'
