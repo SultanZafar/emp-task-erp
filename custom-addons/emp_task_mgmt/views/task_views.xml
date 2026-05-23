@@ -54,7 +54,9 @@
             <form string="Task">
                 <header>
                     <field name="status" widget="statusbar"
-                           statusbar_visible="new,in_progress,done"/>
+                           statusbar_visible="new,in_progress,done"
+                           statusbar_colors='{"done": "success", "in_progress": "warning", "new": "secondary"}'/>
+
                 </header>
                 <sheet>
                     <group string="Task Info">

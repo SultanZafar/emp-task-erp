@@ -5,7 +5,13 @@
         id="menu_emp_task_main"
         name="Task Management"
         sequence="10"/>
-
+    <!-- Dashboard -->
+    <menuitem
+        id="menu_etm_dashboard"
+        name="Dashboard"
+        parent="menu_emp_task_main"
+        action="action_etm_dashboard_new"
+        sequence="0"/>
     <!-- Employees Sub Menu -->
     <menuitem
         id="menu_employee_custom"
@@ -13,7 +19,6 @@
         parent="menu_emp_task_main"
         action="action_employee_custom"
         sequence="1"/>
-
     <!-- Tasks Sub Menu -->
     <menuitem
         id="menu_emp_task"
@@ -21,5 +26,11 @@
         parent="menu_emp_task_main"
         action="action_emp_task"
         sequence="2"/>
-
+    <!-- Payroll Sub Menu -->
+    <menuitem
+        id="menu_payroll"
+        name="Payroll"
+        parent="menu_emp_task_main"
+        action="action_emp_payroll"
+        sequence="3"/>
 </odoo>

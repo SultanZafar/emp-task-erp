@@ -6,17 +6,19 @@
     'author': 'SultanZafar',
     'category': 'Human Resources',
     'depends': ['base', 'mail', 'web'],
-    'controllers': ['controllers/main.py'],
     'data': [
         'security/ir.model.access.csv',
         'views/dashboard_views.xml',
         'views/employee_views.xml',
         'views/task_views.xml',
+        'views/payroll_views.xml',
         'views/menu.xml',
     ],
     'assets': {
         'web.assets_backend': [
             'emp_task_mgmt/static/src/css/dashboard.css',
+            'emp_task_mgmt/static/src/js/dashboard.js',
+            'emp_task_mgmt/static/src/xml/dashboard.xml',
         ],
     },
     'installable': True,
