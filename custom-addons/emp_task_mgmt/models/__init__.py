@@ -1,5 +1,6 @@
-# models will be imported here   # noqa: F401
-from . import employee, task    # noqa: F401
-from . import payroll
+from . import employee  # noqa: F401
+from . import task  # noqa: F401
+from . import payroll  # noqa: F401
+
 
 
