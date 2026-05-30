@@ -1,5 +1,4 @@
 version: '3.8'
-
 services:
   elasticsearch:
     image: elasticsearch:8.13.0
@@ -9,6 +8,8 @@ services:
       - xpack.security.enabled=false
     ports:
       - "9200:9200"
+    networks:
+      - elk
 
   kibana:
     image: kibana:8.13.0
@@ -19,3 +20,22 @@ services:
       - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
     depends_on:
       - elasticsearch
+    networks:
+      - elk
+
+  logstash:
+    image: logstash:8.13.0
+    container_name: logstash
+    ports:
+      - "5044:5044"
+    volumes:
+      - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+      - /home/sultan/odoo-project/odoo.log:/odoo.log:ro
+    depends_on:
+      - elasticsearch
+    networks:
+      - elk
+
+networks:
+  elk:
+    driver: bridge
